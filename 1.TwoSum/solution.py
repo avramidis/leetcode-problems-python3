@@ -50,13 +50,25 @@ class TestTwoSum(unittest.TestCase):
 
         solution = Solution()
 
-        nums = [1,1]
+        nums = [1, 1]
         target = 2
         result = solution.twoSum(nums, target)
 
         self.assertEqual(result[0], 0)
         self.assertEqual(result[1], 1)
-        
+    
+    def testCase2(self):
+        """Test the case when the input list has more than two elements
+        """
+
+        solution = Solution()
+
+        nums = [1, 1, 4, 5]
+        target = 9
+        result = solution.twoSum(nums, target)
+
+        self.assertEqual(result[0], 2)
+        self.assertEqual(result[1], 3)
 
 if __name__ == '__main__':
     unittest.main()
