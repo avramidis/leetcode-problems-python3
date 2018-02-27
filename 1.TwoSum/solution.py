@@ -1,6 +1,6 @@
 
 class Solution:
-    def twoSum(self, nums, target):
+    def twoSumBruteForce(self, nums, target):
         """Given an array of integers, return indices of the two numbers 
         such that they add up to a specific target. You may assume that 
         each input would have exactly one solution, and you may not use 
@@ -37,7 +37,7 @@ def testEmpty():
 
     nums = []
     target = 1
-    result = solution.twoSum(nums, target)
+    result = solution.twoSumBruteForce(nums, target)
 
     assert (result == 0)
 
@@ -49,7 +49,7 @@ def testCase1():
 
     nums = [1, 1]
     target = 2
-    result = solution.twoSum(nums, target)
+    result = solution.twoSumBruteForce(nums, target)
 
     assert (result[0] == 0)
     assert (result[1] == 1)
@@ -62,7 +62,7 @@ def testCase2():
 
     nums = [1, 1, 4, 5]
     target = 9
-    result = solution.twoSum(nums, target)
+    result = solution.twoSumBruteForce(nums, target)
 
     assert (result[0] == 2)
     assert (result[1] == 3)
