@@ -1,4 +1,3 @@
-import unittest
 
 class Solution:
     def twoSum(self, nums, target):
@@ -29,46 +28,41 @@ class Solution:
 
         return 0
 
-        
-class TestTwoSum(unittest.TestCase):
     
-    def testEmpty(self):
-        """Test the case when the input list is empty
-        """
+def testEmpty():
+    """Test the case when the input list is empty
+    """
 
-        solution = Solution()
+    solution = Solution()
 
-        nums = []
-        target = 1
-        result = solution.twoSum(nums, target)
-    
-        self.assertEqual(result, 0)
+    nums = []
+    target = 1
+    result = solution.twoSum(nums, target)
 
-    def testCase1(self):
-        """Test the case when the input list has two elements
-        """
+    assert (result == 0)
 
-        solution = Solution()
+def testCase1():
+    """Test the case when the input list has two elements
+    """
 
-        nums = [1, 1]
-        target = 2
-        result = solution.twoSum(nums, target)
+    solution = Solution()
 
-        self.assertEqual(result[0], 0)
-        self.assertEqual(result[1], 1)
-    
-    def testCase2(self):
-        """Test the case when the input list has more than two elements
-        """
+    nums = [1, 1]
+    target = 2
+    result = solution.twoSum(nums, target)
 
-        solution = Solution()
+    assert (result[0] == 0)
+    assert (result[1] == 1)
 
-        nums = [1, 1, 4, 5]
-        target = 9
-        result = solution.twoSum(nums, target)
+def testCase2():
+    """Test the case when the input list has more than two elements
+    """
 
-        self.assertEqual(result[0], 2)
-        self.assertEqual(result[1], 3)
+    solution = Solution()
 
-if __name__ == '__main__':
-    unittest.main()
+    nums = [1, 1, 4, 5]
+    target = 9
+    result = solution.twoSum(nums, target)
+
+    assert (result[0] == 2)
+    assert (result[1] == 3)
