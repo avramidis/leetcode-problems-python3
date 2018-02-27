@@ -25,8 +25,9 @@ class Solution:
                 if nums[i]+nums[j] == target:
                     result[0] = i
                     result[1] = j
+                    return result
 
-        return result
+        return 0
 
         
 class TestTwoSum(unittest.TestCase):
@@ -42,6 +43,19 @@ class TestTwoSum(unittest.TestCase):
         result = solution.twoSum(nums, target)
     
         self.assertEqual(result, 0)
+
+    def testCase1(self):
+        """Test the case when the input list has two elements
+        """
+
+        solution = Solution()
+
+        nums = [1,1]
+        target = 2
+        result = solution.twoSum(nums, target)
+
+        self.assertEqual(result[0], 0)
+        self.assertEqual(result[1], 1)
         
 
 if __name__ == '__main__':
