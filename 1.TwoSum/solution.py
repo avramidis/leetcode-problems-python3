@@ -86,7 +86,7 @@ class Solution:
         Algorithm analysis:
             Run-time complexity -- It is O(n) because we iterate the 
             nums at most once.
-            Storage complexity -- O(n) because we add each element of num
+            Storage complexity -- O(n) maximum because we add each element of num
             to a dictionary.
         """
 
