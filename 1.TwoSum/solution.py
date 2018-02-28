@@ -84,8 +84,8 @@ class Solution:
             add up to the target
 
         Algorithm analysis:
-            Run-time complexity -- It is O(n) for 2*n because we iterate
-            the nums list twice. One to add the data and one to search.
+            Run-time complexity -- It is O(n) because we iterate the 
+            nums at most once.
             Storage complexity -- O(n) because we add each element of num
             to a dictionary.
         """
@@ -94,13 +94,12 @@ class Solution:
             return 0
 
         hashmap = {}
-        for i in range(len(nums)):
-            hashmap[nums[i]]=i
 
         for i in range(len(nums)):
             num2 = target - nums[i]
-            if (num2 in hashmap and hashmap[num2]!=i):
-                return [i, hashmap[num2]]
+            if (num2 in hashmap):
+                return [hashmap[num2],i]
+            hashmap[nums[i]]=i
 
         return 0
 
@@ -119,6 +118,9 @@ def testEmpty():
     result = solution.twoSumTwoPassHashTable(nums, target)
     assert (result == 0)
 
+    result = solution.twoSumOnePassHashTable(nums, target)
+    assert (result == 0)
+
 def testCase1():
     """Test the case when the input list has two elements
     """
@@ -135,6 +137,10 @@ def testCase1():
     assert (result[0] == 0)
     assert (result[1] == 1)
 
+    result = solution.twoSumOnePassHashTable(nums, target)
+    assert (result[0] == 0)
+    assert (result[1] == 1)
+
 def testCase2():
     """Test the case when the input list has more than two elements
     """
@@ -148,5 +154,9 @@ def testCase2():
     assert (result[1] == 3)
 
     result = solution.twoSumTwoPassHashTable(nums, target)
+    assert (result[0] == 2)
+    assert (result[1] == 3)
+
+    result = solution.twoSumOnePassHashTable(nums, target)
     assert (result[0] == 2)
     assert (result[1] == 3)
