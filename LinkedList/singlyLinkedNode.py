@@ -2,12 +2,22 @@ class SinglyLinkedNode():
     """Implements a singly-linked node.
     """
 
-    value = None
-    nextNode = None
+    def __init__(self, value, nextNode=None):
+        self._value = value
+        self._nextNode = nextNode
 
-    def setvalue(self, x):
-        value = x
+    @property
+    def value(self):
+        return self._value
 
-    def setNextNode(self, node):
-        nextNode = node
-    
+    @value.setter
+    def value(self, value):
+        self._value = value
+
+    @property
+    def nextNode(self):
+        return self._nextNode
+
+    @nextNode.setter
+    def nextNode(self, nextNode):
+        self._nextNode = nextNode
