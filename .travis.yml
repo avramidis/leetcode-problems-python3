@@ -5,3 +5,4 @@ python:
 
 script: 
   - py.test 1.TwoSum/solution.py
+  - py.test LinkedList/singlyLinkedNode.py

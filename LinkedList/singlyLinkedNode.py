@@ -21,3 +21,16 @@ class SinglyLinkedNode():
     @nextNode.setter
     def nextNode(self, nextNode):
         self._nextNode = nextNode
+
+
+def testNode():
+    """Test a singly-linked node
+    """
+
+    node = SinglyLinkedNode(0)
+
+    result = node.value
+    assert (result == 0)
+
+    result = node.nextNode
+    assert (result == None)
