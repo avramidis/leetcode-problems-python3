@@ -23,8 +23,11 @@ class SinglyLinkedNode():
         self._nextNode = nextNode
 
 
+#######################################################################
+## Unit tests
+
 def testNode():
-    """Test a singly-linked node
+    """Test a singly-linked node.
     """
 
     node = SinglyLinkedNode(0)
@@ -34,3 +37,37 @@ def testNode():
 
     result = node.nextNode
     assert (result == None)
+
+def testList():
+    """Test the iteration of a singly-linked list.
+    """
+
+    # Create head node
+    headNode = SinglyLinkedNode(0)
+    # Create second node
+    node = SinglyLinkedNode(1)
+    # Connect second node to head node
+    headNode.nextNode = node
+
+    # Create second node
+    node2 = SinglyLinkedNode(2)
+    # Connect second node to head node
+    node.nextNode = node2
+
+    # Create third node
+    node = SinglyLinkedNode(3)
+    # Connect third node to second node
+    node2.nextNode = node
+
+    # Iterate the list
+    node = headNode
+    assert (node.value == 0)
+    node = node.nextNode
+    assert (node.value == 1)
+    node = node.nextNode
+    assert (node.value == 2)
+    node = node.nextNode
+    assert (node.value == 3)
+    
+    node = node.nextNode
+    assert (node == None)
